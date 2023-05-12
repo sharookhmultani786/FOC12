@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+int main() {
+
+    double x, term, result;
+
+    int i, j, sign;
+
+    printf("Enter a value for x: ");
+
+    scanf("%lf", &x);
+
+    result = 1.0;
+
+    term = 1.0;
+
+    sign = -1;
+
+    for (i = 1; i <= 10; i++) {
+
+        term *= x / i;
+
+        sign *= -1;
+
+        result += sign * term;
+
+    }
+
+    printf("e^(-%.2f) = %.4f\n", x, result);
+
+    return 0;
+
+}
