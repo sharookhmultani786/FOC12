@@ -1,0 +1,25 @@
+#include <stdio.h>
+int main()
+{
+	int c_feet;
+	printf("Enter The Cubic Feet:");
+	scanf("%d",&c_feet);
+	if(c_feet<=1000)
+	{
+		printf("Water bill:$%.2f",15.00);
+	}
+	else if(c_feet>1000 && c_feet <=2000)
+	{
+		printf("Cubit Feet Exceeded!!\nWater bill per Cubic Feet:%.3f\n",0.0175);
+		printf("Water bill:$%lf",0.0175*c_feet);
+	}
+	else if(c_feet>2000 && c_feet<=3000)
+	{
+		printf("Cubit Feet Exceeded!!\nWater bill per Cubic Feet:%.2f\n",0.02);
+		printf("Water bill:$%lf",0.02*c_feet);
+	}
+	else
+	{
+		printf("Water bill:$%.2f",70.00);
+	}
+}
