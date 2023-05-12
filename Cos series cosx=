@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <math.h>
+
+double cosine(double x, int terms) {
+    double result = 1.0; // First term of the series
+
+    double sign = -1.0;
+    double power = 2.0;
+    double factorial = 2.0;
+
+    for (int i = 1; i < terms; i++) {
+        result += sign * (pow(x, power) / factorial);
+
+        sign *= -1; // Alternate the sign for each term
+        power += 2; // Increment the power by 2 for each term
+        factorial *= (power - 1) * power; // Calculate the factorial for each term
+    }
+
+    return result;
+}
+
+int main() {
+    double angle;
+    int numTerms;
+
+    printf("Enter the angle in radians: ");
+    scanf("%lf", &angle);
+
+    printf("Enter the number of terms to use: ");
+    scanf("%d", &numTerms);
+
+    double cosValue = cosine(angle, numTerms);
+
+    printf("cos(%lf) = %lf\n", angle, cosValue);
+
+    return 0;
+}
