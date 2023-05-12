@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <math.h>
+
+double calculateSine(double x, int n) {
+    double sum = 0.0;
+    int sign = 1;
+    int i;
+
+    for (i = 1; i <= n; i += 2) {
+        double term = pow(x, i) / tgamma(i + 1);
+        sum += sign * term;
+        sign *= -1;
+    }
+
+    return sum;
+}
+
+int main() {
+    double x;
+    int n;
+
+    printf("Enter the value of x: ");
+    scanf("%lf", &x);
+
+    printf("Enter the number of terms: ");
+    scanf("%d", &n);
+
+    double result = calculateSine(x, n);
+
+    printf("sin(%.2f) = %.4f\n", x, result);
+
+    return 0;
+}
